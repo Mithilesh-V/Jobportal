@@ -2,7 +2,7 @@
 require_once "config.php";
 
 function open_window($url){
- header("Location: .$url.");
+ header("Location: $url");
  exit();
 };
 
