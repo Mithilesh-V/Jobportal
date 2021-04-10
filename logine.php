@@ -12,7 +12,7 @@ try {
     $password = $_POST['password'];
     $cnt=0;
     
-    $sql = "SELECT * FROM register 
+    $sql = "SELECT * FROM loge 
     WHERE name='$name' AND password='$password' ";
 
     foreach ($conn->query($sql) as $row) {
@@ -23,11 +23,11 @@ try {
   }
   if( $cnt == 0)
   {
-    open_window('register.html');
+    open_window('index.html');
   }
   else
   {
-      open_window('index.html');
+      open_window('emp.html');
   }
   $conn = null;
 ?>

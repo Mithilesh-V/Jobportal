@@ -12,7 +12,7 @@ try {
     $password = $_POST['password'];
     $cnt=0;
     
-    $sql = "SELECT * FROM register 
+    $sql = "SELECT * FROM loga
     WHERE name='$name' AND password='$password' ";
 
     foreach ($conn->query($sql) as $row) {

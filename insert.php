@@ -13,7 +13,7 @@ try {
     $conp = $_POST['confirm_password'];
     if(strcmp($password,$conp)==0)
     {
-      $sql = "INSERT INTO register
+      $sql = "INSERT INTO loge
       VALUES ('$name','$password')";
       // use exec() because no results are returned
       $conn->exec($sql);

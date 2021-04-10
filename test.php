@@ -37,7 +37,7 @@
                     require_once "config.php";
                     
                     // Attempt select query execution
-                    $sql = "SELECT * FROM register";
+                    $sql = "SELECT * FROM loge";
                     if($result = $conn->query($sql)){
                         if($result->rowCount() > 0){
                             echo '<table class="table table-bordered table-striped">';
