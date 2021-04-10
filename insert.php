@@ -1,22 +1,13 @@
 <?php
-$host = "localhost";
-$user = "postgres";
-$pass = "Joelmkarthick3";
-$db = "mydata";
+require_once "config.php";
 
 function open_window($url){
- // echo '<script>window.open ("'.$url.'", "mywindow","status=0,toolbar=0")</script>';
- 
- //echo"<a href='.$url.'></a>";
- header("Location: index.html");
+ header("Location: .$url.");
  exit();
 };
 
 try {
-    $conn = new PDO("pgsql:host=$host;dbname=$db", $user, $pass);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+    
     $name = $_POST['username'];
     $password = $_POST['password'];
 
@@ -30,7 +21,7 @@ try {
   }
   if(strcmp($txt,"New record created successfully") == 0)
   {
-    open_window('http://www.google.com');
+    open_window('index.html');
   }
   $conn = null;
 ?>
