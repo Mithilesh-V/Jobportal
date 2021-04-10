@@ -23,7 +23,7 @@ try {
   }
   if( $cnt == 0)
   {
-    open_window('index.html');
+    open_window('register.html');
   }
   else
   {
