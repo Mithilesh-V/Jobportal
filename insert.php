@@ -6,6 +6,7 @@ $db = "mydata";
 
 function open_window($url){
  // echo '<script>window.open ("'.$url.'", "mywindow","status=0,toolbar=0")</script>';
+ 
  //echo"<a href='.$url.'></a>";
  header("Location: index.html");
  exit();
