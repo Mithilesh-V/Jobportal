@@ -21,13 +21,13 @@ try {
   } catch(PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();
   }
-  if( $cnt == 0)
+  if( $cnt > 1)
   {
     open_window('index.html');
   }
   else
   {
-      open_window('emp.html');
+      open_window('details.html');
   }
   $conn = null;
 ?>
