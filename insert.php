@@ -17,13 +17,13 @@ try {
     $email = $_POST['email'];
     if(strcmp($password,$conp)==0)
     {
-      $sql = "INSERT INTO loge
-      VALUES ('$name','$password');
-      INSERT INTO empdet(f_name,l_name,phno,email,name)
-      VALUES ('$f_name','$l_name','$phno','$email','$name');
+      $conn->beginTransaction();
+      $conn->exec("INSERT INTO loge
+      VALUES ('$name','$password')");
+      $conn->exec("INSERT INTO empdet(f_name,l_name,phno,email,name)
+      VALUES ('$f_name','$l_name','$phno','$email','$name')");
       ";
-      // use exec() because no results are returned
-      $conn->exec($sql);
+      $conn->commit();
       $txt = "New record created successfully";
     }
     else
@@ -31,9 +31,13 @@ try {
       open_window('register.html');
     }
   } catch(PDOException $e) {
-    header("Location: err.html");
-    //sleep(5);
-    //open_window('register.html');
+    $conn->rollback();
+    echo "Error: " . $e->getMessage();
+    echo "USERNAME ALREADY EXISTS<br>
+    <a href="register.html">CLICK HERE TO GO BACK</a>"
+    // header("Location: err.html");
+    // sleep(5);
+    // open_window('register.html');
   }
   if(strcmp($txt,"New record created successfully") == 0)
   {
