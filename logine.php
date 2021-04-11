@@ -6,6 +6,7 @@ function open_window($url){
  exit();
 };
 
+
 try {
     
     $name = $_POST['username'];
@@ -27,7 +28,7 @@ try {
   }
   else
   {
-      open_window('details.html');
+      open_window('emp.html');
   }
   $conn = null;
 ?>
