@@ -21,7 +21,7 @@ try {
   } catch(PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();
   }
-  if( $cnt > 1)
+  if( $cnt < 1)
   {
     open_window('index.html');
   }
