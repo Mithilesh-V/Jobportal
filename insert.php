@@ -24,7 +24,9 @@ try {
       open_window('register.html');
     }
   } catch(PDOException $e) {
-    echo $sql . "<br>" . $e->getMessage();
+    header("Location: err.html");
+    //sleep(5);
+    //open_window('register.html');
   }
   if(strcmp($txt,"New record created successfully") == 0)
   {
