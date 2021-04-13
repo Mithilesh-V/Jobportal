@@ -93,7 +93,7 @@ APPLICANT
     require_once "config.php";
     $name=$_GET['name'];
     // Attempt select query execution
-    $sql = "SELECT * FROM loge";
+    $sql = "SELECT * FROM sume($name)";
     if($result = $conn->query($sql)){
     if($result->rowCount() > 0){
         echo '<table class="table table-bordered table-striped">';
@@ -106,8 +106,8 @@ APPLICANT
             echo "<tbody>";
             while($row = $result->fetch()){
                 echo "<tr>";
-                    echo "<td>" . $row['name'] . "</td>";
-                    echo "<td>" . $row['password'] . "</td>";
+                    echo "<td>" . $row['appl'] . "</td>";
+                    echo "<td>" . $row['stat'] . "</td>";
                 echo "</tr>";
             }
             echo "</tbody>";                            

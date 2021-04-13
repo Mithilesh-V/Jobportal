@@ -91,9 +91,9 @@
                     <?php
                         // Include config file
                         require_once "config.php";
-                    
+                        $name=$_GET['name'];
                         // Attempt select query execution
-                        $sql = "SELECT * FROM loge";
+                        $sql = "SELECT * FROM jobs";
                         if($result = $conn->query($sql)){
                         if($result->rowCount() > 0){
                             echo '<table class="table table-bordered table-striped">';
@@ -108,11 +108,11 @@
                                 echo "<tbody>";
                                 while($row = $result->fetch()){
                                     echo "<tr>";
-                                        echo "<td>" . $row['name'] . "</td>";
-                                        echo "<td>" . $row['password'] . "</td>";
-                                        echo "<td>" . $row['password'] . "</td>";
+                                        echo "<td>" . $row['title'] . "</td>";
+                                        echo "<td>" . $row['location'] . "</td>";
+                                        echo "<td>" . $row['sal'] . "</td>";
                                         echo "<td>";
-                                            echo '<a href="read.php?id='. $row['name'] .'" class="mr-3" title="Apply" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                                            echo '<a href="addapp.php?name='. $row['name'] .'&j_id='. $row['j_id'] .'" class="mr-3" title="Apply" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
                                         echo "</td>";
 
                                     echo "</tr>";
