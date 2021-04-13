@@ -10,11 +10,12 @@ try {
     
     $j_title = $_POST['j_title'];
     $loca = $_POST['loca'];
+    $req = $_POST['req'];
     $sal = $_POST['sal'];
     $txt='';
 
       $conn->beginTransaction();
-      $conn->exec("INSERT INTO jobs(j_title,loca ,sal) VALUES ('$j_title','$loca ','$sal')");
+      $conn->exec("INSERT INTO jobs(j_title,loca,req,sal) VALUES ('$j_title','$loca ','$req','$sal')");
       $conn->commit();
       $txt = "New record created successfully";
 

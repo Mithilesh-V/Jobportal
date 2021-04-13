@@ -1,11 +1,6 @@
 <?php
 require_once "config.php";
 
-function open_window($url){
- header("Location: $url");
- exit();
-};
-
 try {
     
     $name = $_GET['name'];
@@ -25,7 +20,8 @@ try {
   }
   if(strcmp($txt,"New record created successfully") == 0)
   {
-    open_window('admin.php');
+    
+    header("Location: appl.php?name=$name");
   }
   $conn = null;
 ?>

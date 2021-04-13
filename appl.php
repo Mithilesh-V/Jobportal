@@ -101,6 +101,7 @@
                                     echo "<tr>";
                                         echo "<th>TITLE</th>";
                                         echo "<th>LOCATION</th>";
+                                        echo "<th>REQUIREMENTS</th>";
                                         echo "<th>SALARY</th>";
                                         echo "<th>APPLY</th>";
                                     echo "</tr>";
@@ -110,6 +111,7 @@
                                     echo "<tr>";
                                         echo "<td>" . $row['title'] . "</td>";
                                         echo "<td>" . $row['location'] . "</td>";
+                                        echo "<td>" . $row['req'] . "</td>";
                                         echo "<td>" . $row['sal'] . "</td>";
                                         echo "<td>";
                                             echo '<a href="addapp.php?name='. $row['name'] .'&j_id='. $row['j_id'] .'" class="mr-3" title="Apply" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
