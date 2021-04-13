@@ -2,7 +2,7 @@
 require_once "config.php";
 
 function open_window($url){
- header("Location: $url");
+ //header("Location: $url?name=$name");
  exit();
 };
 
@@ -28,7 +28,7 @@ try {
   }
   else
   {
-      open_window('emp.html');
+      header("Location: emp.php?name=$name");
   }
   $conn = null;
 ?>

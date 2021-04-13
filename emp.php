@@ -126,7 +126,7 @@ APPLICANT
 ?>
 <div class="text-center">
     <!-- Button HTML (to Trigger Modal) -->
-	<a href="" class="trigger-btn" data-toggle="modal">APPLY TO JOBS!!!</a>
+	<a href="appl.php" class="trigger-btn" data-toggle="modal">APPLY TO JOBS!!!</a>
 </div>
 <div class="text-center">
     <!-- Button HTML (to Trigger Modal) -->

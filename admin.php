@@ -128,7 +128,11 @@ ADMINISTRATOR
 ?>
 <div class="text-center">
     <!-- Button HTML (to Trigger Modal) -->
-	<a href="" class="trigger-btn" data-toggle="modal">Accept And Reject Applicants</a>
+	<a href="anr.php" class="trigger-btn" data-toggle="modal">Accept And Reject Applicants</a>
+</div>
+<div class="text-center">
+    <!-- Button HTML (to Trigger Modal) -->
+	<a href="insj.php" class="trigger-btn" data-toggle="modal">Add Jobs</a>
 </div>
 <div class="text-center">
     <!-- Button HTML (to Trigger Modal) -->
