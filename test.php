@@ -9,6 +9,63 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
+        body{margin-top:20px;
+        background:rgb(94, 95, 134);
+        }
+    
+        .btn {
+        margin-bottom: 5px;
+        }
+    
+        .grid {
+        position: relative;
+        width: 100%;
+        background: #fff;
+        color: #666666;
+        border-radius: 2px;
+        margin-bottom: 25px;
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+        }
+    
+    .grid .grid-body {
+        padding: 15px 20px 15px 20px;
+        font-size: 0.9em;
+        line-height: 1.9em;
+    }
+    
+    .search table tr td.rate {
+        color: #f39c12;
+        line-height: 50px;
+    }
+    
+    .search table tr:hover {
+        cursor: pointer;
+    }
+    
+    .search table tr td.image {
+        width: 50px;
+    }
+    
+    .search table tr td img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .search table tr td.rate {
+        color: #f39c12;
+        line-height: 50px;
+    }
+    
+    .search table tr td.price {
+        font-size: 1.5em;
+        line-height: 50px;
+    }
+    
+    .search #price1,
+    .search #price2 {
+        display: inline;
+
+    }
         .wrapper{
             width: 600px;
             margin: 0 auto;
@@ -30,21 +87,21 @@
                 <div class="col-md-12">
                     <div class="mt-5 mb-3 clearfix">
                         <h2 class="pull-left">Employees Details</h2>
-                        <a href="create.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Employee</a>
                     </div>
                     <?php
-                    // Include config file
-                    require_once "config.php";
+                        // Include config file
+                        require_once "config.php";
                     
-                    // Attempt select query execution
-                    $sql = "SELECT * FROM loge";
-                    if($result = $conn->query($sql)){
+                        // Attempt select query execution
+                        $sql = "SELECT * FROM loge";
+                        if($result = $conn->query($sql)){
                         if($result->rowCount() > 0){
                             echo '<table class="table table-bordered table-striped">';
                                 echo "<thead>";
                                     echo "<tr>";
                                         echo "<th>USER</th>";
                                         echo "<th>PASSWORD</th>";
+                                        echo "<th>OPTIONS</th>";
                                     echo "</tr>";
                                 echo "</thead>";
                                 echo "<tbody>";
@@ -67,12 +124,12 @@
                         } else{
                             echo '<div class="alert alert-danger"><em>No records were found.</em></div>';
                         }
-                    } else{
+                        } else{
                         echo "Oops! Something went wrong. Please try again later.";
-                    }
+                        }
                     
                     // Close connection
-                    unset($conn);
+                        unset($conn);
                     ?>
                 </div>
             </div>        
