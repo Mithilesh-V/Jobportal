@@ -86,7 +86,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="mt-5 mb-3 clearfix">
-                        <h2 class="pull-left">Employees Details</h2>
+                        <h2 class="pull-left">APPLY TO JOB</h2>
                     </div>
                     <?php
                         // Include config file
@@ -129,10 +129,13 @@
                         } else{
                         echo "Oops! Something went wrong. Please try again later.";
                         }
-                    
+
+                        echo '<br><a href="emp.php?name='. $name .'" class="trigger-btn" data-toggle="modal">GO BACK</a><br>';
                     // Close connection
                         unset($conn);
                     ?>
+
+	
                 </div>
             </div>        
         </div>
