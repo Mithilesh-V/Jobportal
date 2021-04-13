@@ -14,13 +14,19 @@ try {
     $f_name = $_POST['f_name'];
     $l_name = $_POST['l_name'];
     $phno = $_POST['phno'];
+    $qal = $_POST['qal'];
     $email = $_POST['email'];
+    $skills = $_POST['skills'];
+    $age = $_POST['age'];
+    $gender = $_POST['gender'];
+    $p_exp = $_POST['p_exp'];
     $txt='';
     if(strcmp($password,$conp)==0)
     {
       $conn->beginTransaction();
       $conn->exec("INSERT INTO loge VALUES ('$name','$password')");
       $conn->exec("INSERT INTO empdet(f_name,l_name,phno,email,name) VALUES ('$f_name','$l_name','$phno','$email','$name')");
+      $conn->exec("INSERT INTO resum(qal,skills,age,gender,p_exp,name) VALUES ('$qal','$skills','$age','$gender','$p_exp','$name')");
       $conn->commit();
       $txt = "New record created successfully";
     }
@@ -32,9 +38,7 @@ try {
     $conn->rollback();
     echo "Error: " . $e->getMessage();
     echo "USERNAME ALREADY EXISTS<br><a href='register.html'>CLICK HERE TO GO BACK</a>";
-    // header("Location: err.html");
-    // sleep(5);
-    // open_window('register.html');
+
   }
   if(strcmp($txt,"New record created successfully") == 0)
   {
