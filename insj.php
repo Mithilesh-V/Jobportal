@@ -22,12 +22,12 @@ try {
   } catch(PDOException $e) {
     $conn->rollback();
     echo "Error: " . $e->getMessage();
-    echo "JOB EXISTS<br><a href='register.html'>admin.php</a>";
+    echo "JOB EXISTS<br><a href='addjobs.php'>Go Back</a>";
 
   }
   if(strcmp($txt,"New record created successfully") == 0)
   {
-    open_window('admin.php');
+    open_window('addjobs.php');
   }
   $conn = null;
 ?>

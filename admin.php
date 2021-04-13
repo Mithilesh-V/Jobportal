@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>JOB PORTAL</title>
+<title>ADMIN</title>
 <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -15,7 +15,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <style>
+<style>
     body{
         margin-top:20px;
         background:rgb(94, 95, 134);
@@ -128,15 +128,15 @@ ADMINISTRATOR
 ?>
 <div class="text-center">
     <!-- Button HTML (to Trigger Modal) -->
-	<a href="anr.php" class="trigger-btn" data-toggle="modal">Accept And Reject Applicants</a>
+	<a href="anr.php" class="trigger-btn" >Accept And Reject Applicants</a>
 </div>
 <div class="text-center">
     <!-- Button HTML (to Trigger Modal) -->
-	<a href="insj.php" class="trigger-btn" data-toggle="modal">Add Jobs</a>
+	<a href="addjobs.php" class="trigger-btn" >Add Jobs</a>
 </div>
 <div class="text-center">
     <!-- Button HTML (to Trigger Modal) -->
-	<a href="index.html" class="trigger-btn" data-toggle="modal">LOGOUT</a>
+	<a href="index.html" class="trigger-btn" >LOGOUT</a>
 </div>
 </body>
 </html>

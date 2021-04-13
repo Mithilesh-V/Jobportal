@@ -101,6 +101,57 @@
 </style>
 </head>
 <body>
+    <div class="wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mt-5 mb-3 clearfix">
+                        <h2 class="pull-left">APPLY TO JOB</h2>
+                    </div>
+                    <?php
+                        // Include config file
+                        require_once "config.php";
+                        // Attempt select query execution
+                        $sql = "SELECT * FROM jobs";
+                        if($result = $conn->query($sql)){
+                        if($result->rowCount() > 0){
+                            echo '<table class="table table-bordered table-striped">';
+                                echo "<thead>";
+                                    echo "<tr>";
+                                        echo "<th>TITLE</th>";
+                                        echo "<th>LOCATION</th>";
+                                        echo "<th>REQUIREMENTS</th>";
+                                        echo "<th>SALARY</th>";
+                                    echo "</tr>";
+                                echo "</thead>";
+                                echo "<tbody>";
+                                while($row = $result->fetch()){
+                                    echo "<tr>";
+                                        echo "<td>" . $row['title'] . "</td>";
+                                        echo "<td>" . $row['location'] . "</td>";
+                                        echo "<td>" . $row['req'] . "</td>";
+                                        echo "<td>" . $row['sal'] . "</td>";
+                                    echo "</tr>";
+                                }
+                                echo "</tbody>";                            
+                            echo "</table>";
+                            // Free result set
+                            unset($result);
+                        } else{
+                            echo '<div class="alert alert-danger"><em>No records were found.</em></div>';
+                        }
+                        } else{
+                        echo "Oops! Something went wrong. Please try again later.";
+                        }
+
+                    // Close connection
+                        unset($conn);
+                    ?>
+                </div>
+            </div>        
+        </div>
+    </div>
+    	
 <div class="signup-form">
     <form action="insj.php" method="post">
 		<h2>ADD JOBS</h2>
@@ -120,6 +171,8 @@
             <button type="submit" class="btn btn-success btn-lg btn-block">Submit</button>
         </div>
     </form>
+    
 </div>
+<br><a href="admin.php" class="trigger-btn" data-toggle="modal">GO BACK</a><br>
 </body>
 </html>
