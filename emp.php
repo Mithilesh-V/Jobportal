@@ -91,9 +91,9 @@ APPLICANT
     <?php
     // Include config file
     require_once "config.php";
-
+    $name=$_GET['name'];
     // Attempt select query execution
-    $sql = "SELECT * FROM sume()";
+    $sql = "SELECT * FROM loge";
     if($result = $conn->query($sql)){
     if($result->rowCount() > 0){
         echo '<table class="table table-bordered table-striped">';
@@ -106,8 +106,8 @@ APPLICANT
             echo "<tbody>";
             while($row = $result->fetch()){
                 echo "<tr>";
-                    echo "<td>" . $row['app'] . "</td>";
-                    echo "<td>" . $row['status'] . "</td>";
+                    echo "<td>" . $row['name'] . "</td>";
+                    echo "<td>" . $row['password'] . "</td>";
                 echo "</tr>";
             }
             echo "</tbody>";                            
@@ -122,15 +122,21 @@ APPLICANT
     }
 
 // Close connection
-    unset($conn);
-?>
+
+
+print <<<_HTML_
 <div class="text-center">
     <!-- Button HTML (to Trigger Modal) -->
-	<a href="appl.php" class="trigger-btn" data-toggle="modal">APPLY TO JOBS!!!</a>
+	<a href="appl.php?name=$name " class="trigger-btn" data-toggle="modal">APPLY TO JOBS!!!</a>
 </div>
 <div class="text-center">
     <!-- Button HTML (to Trigger Modal) -->
 	<a href="index.html" class="trigger-btn" data-toggle="modal">LOGOUT</a>
 </div>
+_HTML_;
+
+unset($conn);
+
+?>
 </body>
 </html>
