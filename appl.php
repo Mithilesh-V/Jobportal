@@ -135,7 +135,7 @@
                         echo "Oops! Something went wrong. Please try again later.";
                     }
 
-                    echo '<br><a href="emp.php?name=' . $name . '" class="trigger-btn" data-toggle="modal">GO BACK</a><br>';
+                    echo '<br><a href="emp.php?name=' . $name . '" >GO BACK</a><br>';
                     // Close connection
                     unset($conn);
                     ?>

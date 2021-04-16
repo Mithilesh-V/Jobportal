@@ -118,6 +118,7 @@
                 echo "<th>Age</th>";
                 echo "<th>Gender</th>";
                 echo "<th>Prof. Exp.</th>";
+                echo "<th>Options</th>";
                 echo "</tr>";
                 echo "</thead>";
                 echo "<tbody>";
@@ -131,14 +132,15 @@
                   echo "<td>" . $row['t6'] . "</td>";
                   echo "<td>" . $row['t7'] . "</td>";
                   echo '<td>';
-                  echo '<a href="acptapp.php?name=' . $row['t8'] . '&j_id=' . $row['t9'] . '" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
-                  echo '<a href="rmapp.php?name=' . $row['t8'] . '&j_id=' . $row['t9'] . '" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
+                  echo '<a href="acptapp.php?name=' . $row['t8'] . '&j_id=' . $row['t9'] . '" class="mr-3" title="ACCEPT" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                  echo '<a href="rmapp.php?name=' . $row['t8'] . '&j_id=' . $row['t9'] . '" title="REJECT" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
                   echo "</td>";
 
                   echo "</tr>";
                 }
                 echo "</tbody>";
                 echo "</table>";
+                
                 // Free result set
                 unset($result);
               } else {
@@ -155,7 +157,7 @@
         
           $hmm=$_SERVER['PHP_SELF'];
 echo <<<_HTML_
-
+<br><a href="admin.php" >GO BACK</a><br>
   <form method="post" action= "$hmm">
 
     <h4>Degree:</h4>

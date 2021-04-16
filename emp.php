@@ -129,11 +129,11 @@ APPLICANT
 print <<<_HTML_
 <div class="text-center">
     <!-- Button HTML (to Trigger Modal) -->
-	<a href="appl.php?name=$name " class="trigger-btn" data-toggle="modal">APPLY TO JOBS!!!</a>
+	<a href="appl.php?name=$name " >APPLY TO JOBS!!!</a>
 </div>
 <div class="text-center">
     <!-- Button HTML (to Trigger Modal) -->
-	<a href="index.html" class="trigger-btn" data-toggle="modal">LOGOUT</a>
+	<a href="index.html" >LOGOUT</a>
 </div>
 _HTML_;
 

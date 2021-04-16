@@ -90,7 +90,7 @@
             <button type="submit" class="btn btn-success btn-lg btn-block">Submit</button>
         </div>
     </form>
-    <br><a href="admin.php" class="trigger-btn" data-toggle="modal">GO BACK</a><br>
+    <br><a href="admin.php" >GO BACK</a><br>
     
 </div>
 
