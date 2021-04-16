@@ -13,8 +13,8 @@
 <style>
 	body {
 
-		background: #63738a;
-		font-family: 'Roboto', sans-serif;
+        margin-top: 20px;
+      background: rgb(94, 95, 134);
 	}
 
 </style>
@@ -25,7 +25,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="mt-5 mb-3 clearfix">
-                        <h2 class="pull-left">APPLY TO JOB</h2>
+                        <h1 class="pull-left">ADD JOBS</h1>
                     </div>
                     <?php
                         // Include config file
@@ -73,7 +73,7 @@
     	
 <div class="signup-form">
     <form action="insj.php" method="post">
-		<h2>ADD JOBS</h2>
+		<h1>ADD JOBS</h1>
         <div class="form-group">
             <input type="text" class="form-control" name="j_title" placeholder="Job Title" required="required">	
         </div>
