@@ -1,4 +1,4 @@
-# SQL STATEMENTS and stuff 
+SQL STATEMENTS and stuff 
 
 
 CREATE TABLE loga (
