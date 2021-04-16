@@ -94,112 +94,96 @@
             <h2 class="pull-left">Accept Or Reject Applicants</h2>
           </div>
           <?php
+         error_reporting(E_ALL ^ E_WARNING); 
           if (isset($_POST['submit'])) {
-            $name = $_POST['name'];
-            $hmm =$_POST['gender'];
-            echo "User Has submitted the form and entered this name : <b> $name </b>";
-            echo "User Has submitted the form and entered this name : <b> $hmm </b>";
-            echo "<br>You can use the following form again to enter a new name.";
-          
-          // Include config file
-          require_once "config.php";
+       
+            $gen = $_POST['gender'];
+            $deg = $_POST['degree'];
+            $pexp = $_POST['p_exp'];
 
-          // Attempt select query execution
-          $sql = "SELECT * FROM loge";
-          if ($result = $conn->query($sql)) {
-            if ($result->rowCount() > 0) {
-              echo '<table class="table table-bordered table-striped">';
-              echo "<thead>";
-              echo "<tr>";
-              echo "<th>USER</th>";
-              echo "<th>PASSWORD</th>";
-              echo "<th>OPTIONS</th>";
-              echo "</tr>";
-              echo "</thead>";
-              echo "<tbody>";
-              while ($row = $result->fetch()) {
+            // Include config file
+            require_once "config.php";
+
+            // Attempt select query execution
+            $sql = "SELECT * FROM showanr('$gen','$deg',$pexp)";
+            if ($result = $conn->query($sql)) {
+              if ($result->rowCount() > 0) {
+                echo '<table class="table table-bordered table-striped">';
+                echo "<thead>";
                 echo "<tr>";
-                echo "<td>" . $row['name'] . "</td>";
-                echo "<td>" . $row['password'] . "</td>";
-                echo "<td>";
-                echo '<a href="read.php?id=' . $row['name'] . '" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
-                echo '<a href="delete.php?id=' . $row['name'] . '" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
-                echo "</td>";
-
+                echo "<th>Job Title</th>";
+                echo "<th>Location</th>";
+                echo "<th>Salary</th>";
+                echo "<th>Name</th>";
+                echo "<th>Age</th>";
+                echo "<th>Gender</th>";
+                echo "<th>Prof. Exp.</th>";
                 echo "</tr>";
-              }
-              echo "</tbody>";
-              echo "</table>";
-              // Free result set
-              unset($result);
-            } else {
-              echo '<div class="alert alert-danger"><em>No records were found.</em></div>';
-            }
-          } else {
-            echo "Oops! Something went wrong. Please try again later.";
-          }
+                echo "</thead>";
+                echo "<tbody>";
+                while ($row = $result->fetch()) {
+                  echo "<tr>";
+                  echo "<td>" . $row['t1'] . "</td>";
+                  echo "<td>" . $row['t2'] . "</td>";
+                  echo "<td>" . $row['t3'] . "</td>";
+                  echo "<td>" . $row['t4'] . "</td>";
+                  echo "<td>" . $row['t5'] . "</td>";
+                  echo "<td>" . $row['t6'] . "</td>";
+                  echo "<td>" . $row['t7'] . "</td>";
+                  echo '<td>';
+                  echo '<a href="acptapp.php?name=' . $row['t8'] . '&j_id=' . $row['t9'] . '" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                  echo '<a href="rmapp.php?name=' . $row['t8'] . '&j_id=' . $row['t9'] . '" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
+                  echo "</td>";
 
-          // Close connection
-          unset($conn);
-        }
-          ?>
-        </div>
+                  echo "</tr>";
+                }
+                echo "</tbody>";
+                echo "</table>";
+                // Free result set
+                unset($result);
+              } else {
+                echo '<div class="alert alert-danger"><em>No records were found.</em></div>';
+              }
+            } else {
+              echo "Oops! Something went wrong. Please try again later.";
+            }
+
+            // Close connection
+            unset($conn);
+          }
+          
+        
+          $hmm=$_SERVER['PHP_SELF'];
+echo <<<_HTML_
+
+  <form method="post" action= "$hmm">
+
+    <h4>Degree:</h4>
+    <input type="radio" id="Postgraduate" name="degree" value="PG">
+    <label for="Postgraduate">Postgraduate</label><br>
+    <input type="radio" id="Undergraduate" name="degree" value="UG">
+    <label for="Undergraduate">Undergraduate</label><br>
+
+
+    <h4>By Gender:</h4>
+    <input type="radio" id="male" name="gender" value="M">
+    <label for="male">Male</label><br>
+    <input type="radio" id="female" name="gender" value="F">
+    <label for="female">Female</label><br>
+    <input type="radio" id="other" name="gender" value="O">
+    <label for="other">Other</label>
+
+    <h4 class="title">Min Professional Exp: </h4>
+    <input type="number" class="form-control" name="p_exp" placeholder="In years" value=0>
+    <input type="submit" name="submit" value="Filter"><br>
+  </form>
+
+_HTML_;
+?>
+</div>
       </div>
     </div>
   </div>
 </body>
 
 </html>
-
-<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-  <!-- BEGIN FILTER BY CATEGORY -->
-  <h4>Experience in years:</h4>
-  <div class="form-group col-md-6">
-
-    <input type="number" class="form-control" placeholder="Experience" >
-  </div>
-
-
-  <h4>Degree:</h4>
-  <input type="radio" id="Postgraduate" name="degree" value="PG">
-  <label for="Postgraduate">Postgraduate</label><br>
-  <input type="radio" id="Undergraduate" name="degree" value="UG">
-  <label for="Undergraduate">Undergraduate</label><br>
-  <!-- END FILTER BY CATEGORY -->
-
-  <h4>By Gender:</h4>
-  <input type="radio" id="male" name="gender" value="male">
-  <label for="male">Male</label><br>
-  <input type="radio" id="female" name="gender" value="female">
-  <label for="female">Female</label><br>
-  <input type="radio" id="other" name="gender" value="other">
-  <label for="other">Other</label>
-
-
-  <!-- BEGIN FILTER BY DATE -->
-  <article class="card-group-item">
-    <header class="card-header">
-      <h4 class="title">Age Range: </h4>
-    </header>
-    <div class="filter-content">
-      <div class="card-body">
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label>Min</label>
-            <input type="number" class="form-control" id="inputEmail4" placeholder="0">
-          </div>
-          <div class="form-group col-md-6 text-right">
-            <label>Max</label>
-            <input type="number" class="form-control" placeholder="60">
-          </div>
-        </div>
-      </div> <!-- card-body.// -->
-    </div>
-  </article> <!-- card-group-item.// -->
-
-
-
-
-  <input type="text" name="name"><br>
-  <input type="submit" name="submit" value="Submit Form"><br>
-</form>
