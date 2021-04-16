@@ -127,10 +127,10 @@
                                 echo "<tbody>";
                                 while($row = $result->fetch()){
                                     echo "<tr>";
-                                        echo "<td>" . $row['title'] . "</td>";
-                                        echo "<td>" . $row['location'] . "</td>";
-                                        echo "<td>" . $row['req'] . "</td>";
-                                        echo "<td>" . $row['sal'] . "</td>";
+                                        echo "<td>" . $row['job_title'] . "</td>";
+                                        echo "<td>" . $row['loca'] . "</td>";
+                                        echo "<td>" . $row['degree_req'] . "</td>";
+                                        echo "<td>" . $row['salary'] . "</td>";
                                     echo "</tr>";
                                 }
                                 echo "</tbody>";                            
@@ -171,8 +171,9 @@
             <button type="submit" class="btn btn-success btn-lg btn-block">Submit</button>
         </div>
     </form>
+    <br><a href="admin.php" class="trigger-btn" data-toggle="modal">GO BACK</a><br>
     
 </div>
-<br><a href="admin.php" class="trigger-btn" data-toggle="modal">GO BACK</a><br>
+
 </body>
 </html>

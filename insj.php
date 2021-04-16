@@ -15,7 +15,7 @@ try {
     $txt='';
 
       $conn->beginTransaction();
-      $conn->exec("INSERT INTO jobs(j_title,loca,req,sal) VALUES ('$j_title','$loca ','$req','$sal')");
+      $conn->exec("INSERT INTO jobs(job_title,loca,degree_req,salary) VALUES ('$j_title','$loca ','$req','$sal')");
       $conn->commit();
       $txt = "New record created successfully";
 

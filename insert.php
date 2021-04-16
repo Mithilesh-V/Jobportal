@@ -25,8 +25,7 @@ try {
     {
       $conn->beginTransaction();
       $conn->exec("INSERT INTO loge VALUES ('$name','$password')");
-      $conn->exec("INSERT INTO empdet(f_name,l_name,phno,email,name) VALUES ('$f_name','$l_name','$phno','$email','$name')");
-      $conn->exec("INSERT INTO resum(qal,skills,age,gender,p_exp,name) VALUES ('$qal','$skills','$age','$gender','$p_exp','$name')");
+      $conn->exec("INSERT INTO empdet(f_name,l_name,phno,email,qal,skills,age,gender,p_exp,name) VALUES ('$f_name','$l_name','$phno','$email','$qal','$skills','$age','$gender','$p_exp','$name')");
       $conn->commit();
       $txt = "New record created successfully";
     }

@@ -96,7 +96,9 @@
           <?php
           if (isset($_POST['submit'])) {
             $name = $_POST['name'];
+            $hmm =$_POST['gender'];
             echo "User Has submitted the form and entered this name : <b> $name </b>";
+            echo "User Has submitted the form and entered this name : <b> $hmm </b>";
             echo "<br>You can use the following form again to enter a new name.";
           
           // Include config file
@@ -154,27 +156,24 @@
   <h4>Experience in years:</h4>
   <div class="form-group col-md-6">
 
-    <input type="number" class="form-control" placeholder="Experience" required="required">
+    <input type="number" class="form-control" placeholder="Experience" >
   </div>
+
+
   <h4>Degree:</h4>
-  <div class="checkbox">
-    <label><input type="checkbox" class="icheck" placeholder="post"> Postgraduate</label>
-  </div>
-  <div class="checkbox">
-    <label><input type="checkbox" class="icheck" placeholder="under"> Undergraduate</label>
-  </div>
+  <input type="radio" id="Postgraduate" name="degree" value="PG">
+  <label for="Postgraduate">Postgraduate</label><br>
+  <input type="radio" id="Undergraduate" name="degree" value="UG">
+  <label for="Undergraduate">Undergraduate</label><br>
   <!-- END FILTER BY CATEGORY -->
 
   <h4>By Gender:</h4>
-  <div class="checkbox">
-    <label><input type="checkbox" class="icheck" placeholder="male"> Male</label>
-  </div>
-  <div class="checkbox">
-    <label><input type="checkbox" class="icheck" placeholder="Female"> Female</label>
-  </div>
-  <div class="checkbox">
-    <label><input type="checkbox" class="icheck" placeholder="Other"> Other</label>
-  </div>
+  <input type="radio" id="male" name="gender" value="male">
+  <label for="male">Male</label><br>
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="female">Female</label><br>
+  <input type="radio" id="other" name="gender" value="other">
+  <label for="other">Other</label>
 
 
   <!-- BEGIN FILTER BY DATE -->
