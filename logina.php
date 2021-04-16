@@ -27,7 +27,7 @@ try {
   }
   else
   {
-      open_window('admin.html');
+      open_window('admin.php');
   }
   $conn = null;
 ?>
