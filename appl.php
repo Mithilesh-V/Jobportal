@@ -109,10 +109,10 @@
                                 echo "<tbody>";
                                 while($row = $result->fetch()){
                                     echo "<tr>";
-                                        echo "<td>" . $row['title'] . "</td>";
-                                        echo "<td>" . $row['location'] . "</td>";
-                                        echo "<td>" . $row['req'] . "</td>";
-                                        echo "<td>" . $row['sal'] . "</td>";
+                                        echo "<td>" . $row['job_title'] . "</td>";
+                                        echo "<td>" . $row['loca'] . "</td>";
+                                        echo "<td>" . $row['degree_req'] . "</td>";
+                                        echo "<td>" . $row['salary'] . "</td>";
                                         echo "<td>";
                                             echo '<a href="addapp.php?name='. $row['name'] .'&j_id='. $row['j_id'] .'" class="mr-3" title="Apply" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
                                         echo "</td>";
