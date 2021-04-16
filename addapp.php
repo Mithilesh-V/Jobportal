@@ -8,7 +8,7 @@ try {
     $txt='';
 
       $conn->beginTransaction();
-      $conn->exec("call appljbs('$name','$j_id');");
+      $conn->exec("INSERT INTO appl(j_id,name,status) values('$j_id','$name','O');");
       $conn->commit();
       $txt = "New record created successfully";
 

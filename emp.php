@@ -93,20 +93,22 @@ APPLICANT
     require_once "config.php";
     $name=$_GET['name'];
     // Attempt select query execution
-    $sql = "SELECT * FROM sume($name)";
+    $sql = "SELECT * FROM sume('$name')";
     if($result = $conn->query($sql)){
     if($result->rowCount() > 0){
         echo '<table class="table table-bordered table-striped">';
             echo "<thead>";
                 echo "<tr>";
-                    echo "<th>APPLIED</th>";
+                    echo "<th>JOB TITLE</th>";
+                    echo "<th>LOCATION</th>";
                     echo "<th>STATUS</th>";
                 echo "</tr>";
             echo "</thead>";
             echo "<tbody>";
             while($row = $result->fetch()){
                 echo "<tr>";
-                    echo "<td>" . $row['appl'] . "</td>";
+                    echo "<td>" . $row['j_title'] . "</td>";
+                    echo "<td>" . $row['locat'] . "</td>";
                     echo "<td>" . $row['stat'] . "</td>";
                 echo "</tr>";
             }
