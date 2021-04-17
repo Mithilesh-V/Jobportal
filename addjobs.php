@@ -13,7 +13,7 @@
 <style>
 	body {
 
-        margin-top: 20px;
+      margin-top: 20px;
       background: #AFEEEE;
 	}
 
@@ -25,7 +25,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="mt-5 mb-3 clearfix">
-                        <h1 class="pull-left">ADD JOBS</h1>
+                        <h1 class="pull-left">Post JOBS</h1>
                     </div>
                     <?php
                         // Include config file
