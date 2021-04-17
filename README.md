@@ -7,4 +7,4 @@ Made using HTML,CSS,JS,PHP,PostGRESQL
 - The Candidate can apply to the job from a list of jobs.
 - The Admin can accept or reject the applicant 
 
-![Image of Yaktocat](https://github.com/Joel-Marc/jobportal/blob/master/drawSQL-export-2021-04-18_01_23.png)
+![E-R Diagram](https://github.com/Joel-Marc/jobportal/blob/master/drawSQL-export-2021-04-18_01_23.png)
