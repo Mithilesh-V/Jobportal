@@ -62,6 +62,11 @@ create or replace function sume(
 as $$
 begin
 	return query 
+	select distinct jobs.job_title as j_title,jobs.loca as locat,status as stat 
+		from jobs join appl on jobs.j_id=appl.j_id 
+		where appl.name=aname;
+
+end;$$
 
 
 create or replace function suma(
