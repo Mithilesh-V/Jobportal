@@ -12,7 +12,7 @@
     <style>
         body {
             margin-top: 20px;
-            background: rgb(94, 95, 134);
+            background: #AFEEEE;
         }
 
     </style>
