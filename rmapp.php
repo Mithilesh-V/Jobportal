@@ -25,7 +25,7 @@ try {
   }
   if(strcmp($txt,"New record created successfully") == 0)
   {
-    open_window('addjobs.php');
+    open_window('anr.php');
   }
   $conn = null;
 ?>
