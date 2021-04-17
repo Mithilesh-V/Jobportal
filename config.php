@@ -3,7 +3,7 @@
 /*
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'postgres');
-define('DB_PASSWORD', 'Joelmkarthick3');
+define('DB_PASSWORD', 'Postgres@2001');
 define('DB_NAME', 'mydata');
  */
 $host = "localhost";
