@@ -77,14 +77,6 @@ begin
 		select count(*) into acpt from appl where status='A';
 end;$$
 
-		select
-			title,
-			release_year::integer
-		from
-			film
-		where
-			title ilike p_pattern;
-end;$$
 
 
 create or replace function showanr(
