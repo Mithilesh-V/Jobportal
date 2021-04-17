@@ -8,7 +8,7 @@ define('DB_NAME', 'mydata');
  */
 $host = "localhost";
 $user = "postgres";
-$pass = "Joelmkarthick3";
+$pass = "Postgres@2001";
 $db = "mydata";
 
 try{
