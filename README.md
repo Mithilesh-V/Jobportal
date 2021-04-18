@@ -1,6 +1,6 @@
 # Job Portal
 
-Made using HTML,CSS,JS,PHP,PostGRESQL
+Made using HTML,CSS,PHP,PostGRESQL
 
 - It is like a Real-life bulletin board. 
 - The Administrator puts up a job vacancy.
