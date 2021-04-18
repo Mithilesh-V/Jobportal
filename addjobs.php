@@ -13,9 +13,21 @@
 <style>
 	body {
 
-      margin-top: 20px;
+      margin-top: 10px;
       background: #AFEEEE;
 	}
+    a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: skyblue;
+}
 
 </style>
 </head>

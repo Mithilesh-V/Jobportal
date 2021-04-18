@@ -18,6 +18,7 @@
 <style>
     body{
         margin-top:20px;
+        font-style:'Varela Round';
         background:#AFEEEE;
         font-size: large;
     }
@@ -28,7 +29,7 @@
     
     .grid {
         position: relative;
-        width: 100%;
+        width: 80%;
         background: #fff;
         color: #666666;
         border-radius: 2px;
@@ -77,6 +78,44 @@
         table tr td:last-child{
             width: 120px;
         }
+
+        #customers {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 80%;
+        
+    }
+
+    #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    }
+
+#customers tr:nth-child(even){background-color: #191970;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #191970;
+  color: white;
+}
+
+a:link, a:visited {
+  background-color: #00FA9A;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: #00ff7f;
+}
+</style>
     </style>
     <script>
         $(document).ready(function(){
@@ -86,8 +125,10 @@
 </head>
 <body>
 <div class="text-center">
-ADMINISTRATOR
+ADMINISTRATOR Actions
 </div>
+<div>
+    <br>
     <?php
     // Include config file
     require_once "config.php";
@@ -96,7 +137,7 @@ ADMINISTRATOR
     $sql = "SELECT * FROM suma()";
     if($result = $conn->query($sql)){
     if($result->rowCount() > 0){
-        echo '<table class="table table-bordered table-striped">';
+        echo '<table id = "customers" >';
             echo "<thead>";
                 echo "<tr>";
                     echo "<th>APPLIED</th>";
@@ -126,7 +167,10 @@ ADMINISTRATOR
 // Close connection
     unset($conn);
 ?>
-<div class="text-center">
+<br><br><br>
+</div>
+<div class="modal-footer" >
+<div class="text-left">
     <!-- Button HTML (to Trigger Modal) -->
 	<a href="anr.php" class="trigger-btn" >Accept And Reject Applicants</a>
 </div>
@@ -134,9 +178,10 @@ ADMINISTRATOR
     <!-- Button HTML (to Trigger Modal) -->
 	<a href="addjobs.php" class="trigger-btn" >Add Jobs</a>
 </div>
-<div class="text-center">
+<div class="text-right">
     <!-- Button HTML (to Trigger Modal) -->
 	<a href="index.html" class="trigger-btn" >LOGOUT</a>
+</div>
 </div>
 </body>
 </html>
