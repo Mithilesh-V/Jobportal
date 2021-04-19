@@ -15,19 +15,136 @@
 
       margin-top: 10px;
       background: #AFEEEE;
+      font-family: 'Roboto', sans-serif;
 	}
+    
     a:link, a:visited {
   background-color: #f44336;
   color: white;
-  padding: 14px 25px;
+  padding: 10px 20px;
   text-align: center;
+  position: relative;
   text-decoration: none;
   display: inline-block;
 }
 
 a:hover, a:active {
-  background-color: skyblue;
+  background-color: orange;
 }
+
+
+    .form-control{
+		height: 30px;
+		box-shadow: none;
+		color: #969fa4;
+	}
+	.form-control:focus{
+		border-color: #5cb85c;
+	}
+    .form-control, .btn{        
+        border-radius: 3px;
+    }
+	.signup-form{
+		width: 700px;
+		padding: 10px 0;
+	}
+	.signup-form h2{
+		color: #636363;
+        margin: 0 0 15px;
+		position: relative;
+		text-align: center;
+    }
+	.signup-form h2:before, .signup-form h2:after{
+		content: "";
+		height: 2px;
+		width: 30%;
+		background: #d4d4d4;
+		position: absolute;
+		top: 50%;
+		z-index: 2;
+	}	
+	.signup-form h2:before{
+		left: 0;
+	}
+	.signup-form h2:after{
+		right: 0;
+	}
+    .signup-form .hint-text{
+		color: #999;
+		margin-bottom: 10px;
+		text-align: center;
+	}
+    h1{
+        color: #999;
+		margin-bottom: 10px;
+		
+    }
+    .signup-form form{
+		color: #999;
+		border-radius: 3px;
+    	margin-bottom: 15px;
+        background: #AFEEEE;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        padding: 30px;
+    }
+	.signup-form .form-group{
+		margin-bottom: 20px;
+	}
+	.signup-form input[type="checkbox"]{
+		margin-top: 3px;
+	}
+	.signup-form .btn{        
+        font-size: 16px;
+        font-weight: bold;		
+		min-width: 140px;
+        outline: none !important;
+    }
+	.signup-form .row div:first-child{
+		padding-right: 10px;
+	}
+	.signup-form .row div:last-child{
+		padding-left: 20px;
+	}    	
+    .signup-form a{
+		color: #fff;
+		text-decoration: underline;
+	}
+    .signup-form a:hover{
+		text-decoration: none;
+	}
+	.signup-form form a{
+		color: #5cb85c;
+		text-decoration: none;
+	}	
+	.signup-form form a:hover{
+		text-decoration: underline;
+	}   
+
+    #customers {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 90%;
+        margin:auto;
+        
+    }
+
+    #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    background-color:#ddd;
+    }
+
+    #customers tr:nth-child(even){background-color: #191970;}
+
+    #customers tr:hover {background-color: #ddd;}
+
+    #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(50, 115, 220);;
+    color: white;
+    }
 
 </style>
 </head>
@@ -37,7 +154,7 @@ a:hover, a:active {
             <div class="row">
                 <div class="col-md-12">
                     <div class="mt-5 mb-3 clearfix">
-                        <h1 class="pull-left">Post JOBS</h1>
+                        <h1 class="pull-left">AVAILABLE JOB VACANCY</h1>
                     </div>
                     <?php
                         // Include config file
@@ -46,7 +163,7 @@ a:hover, a:active {
                         $sql = "SELECT * FROM jobs";
                         if($result = $conn->query($sql)){
                         if($result->rowCount() > 0){
-                            echo '<table class="table table-bordered table-striped">';
+                            echo '<table id = "customers">';
                                 echo "<thead>";
                                     echo "<tr>";
                                         echo "<th>TITLE</th>";
@@ -85,7 +202,7 @@ a:hover, a:active {
     	
 <div class="signup-form">
     <form action="insj.php" method="post">
-		<h1>ADD JOBS</h1>
+		<h1>ADD JOB VACANCY</h1>
         <div class="form-group">
             <input type="text" class="form-control" name="j_title" placeholder="Job Title" required="required">	
         </div>
