@@ -14,6 +14,48 @@
       margin-top: 20px;
       background: #AFEEEE;
     }
+    .formmith{
+		color: #999;
+    width: 500px;
+		border-radius: 3px;
+    margin-bottom: 15px;
+    background: #AFEEEE;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    }
+    .new1{
+      width 100pxs ;
+    }
+    h2{
+        color: #999;
+		    margin-bottom: 10px;
+      }
+
+      #customers {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 90%;
+        margin:auto;
+        
+    }
+
+    #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    background-color:#ddd;
+    }
+
+    #customers tr:nth-child(even){background-color: #191970;}
+
+    #customers tr:hover {background-color: #ddd;}
+
+    #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(50, 115, 220);;
+    color: white;
+    }
   </style>
   <script>
     $(document).ready(function() {
@@ -45,7 +87,7 @@
             $sql = "SELECT * FROM showanr('$gen','$deg',$pexp)";
             if ($result = $conn->query($sql)) {
               if ($result->rowCount() > 0) {
-                echo '<table class="table table-bordered table-striped">';
+                echo '<table id="customers">';
                 echo "<thead>";
                 echo "<tr>";
                 echo "<th>Job Title</th>";
@@ -95,6 +137,7 @@
           $hmm=$_SERVER['PHP_SELF'];
 echo <<<_HTML_
 <br><a href="admin.php" >GO BACK</a><br>
+<div class="formmith">
   <form method="post" action= "$hmm">
 
     <h4>Degree:</h4>
@@ -114,8 +157,10 @@ echo <<<_HTML_
 
     <h4 class="title">Min Professional Exp: </h4>
     <input type="number" class="form-control" name="p_exp" placeholder="In years" value=0>
-    <input type="submit" name="submit" value="Filter"><br>
-  </form>
+    <br>
+    <input class="new1" type="submit" name="submit" value="Filter"><br>
+  </div>
+    </form>
 
 _HTML_;
 ?>
