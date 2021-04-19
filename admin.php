@@ -82,13 +82,15 @@
         #customers {
         font-family: Arial, Helvetica, sans-serif;
         border-collapse: collapse;
-        width: 80%;
+        width: 90%;
+        margin:auto;
         
     }
 
     #customers td, #customers th {
     border: 1px solid #ddd;
     padding: 8px;
+    background-color:#ddd;
     }
 
 #customers tr:nth-child(even){background-color: #191970;}
@@ -99,15 +101,16 @@
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #191970;
+  background-color: rgb(50, 115, 220);;
   color: white;
 }
 
 a:link, a:visited {
   background-color: #00FA9A;
   color: white;
-  padding: 14px 25px;
+  padding: 10px 20px;
   text-align: center;
+  margin:auto;
   text-decoration: none;
   display: inline-block;
 }
@@ -125,10 +128,10 @@ a:hover, a:active {
 </head>
 <body>
 <div class="text-center">
-ADMINISTRATOR Actions
+ADMINISTRATOR
 </div>
 <div>
-    <br>
+    <br><br><br>
     <?php
     // Include config file
     require_once "config.php";
@@ -167,7 +170,7 @@ ADMINISTRATOR Actions
 // Close connection
     unset($conn);
 ?>
-<br><br><br>
+<br><br><br><br><br>
 </div>
 <div class="modal-footer" >
 <div class="text-left">
