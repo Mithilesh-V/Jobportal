@@ -7,5 +7,5 @@ Made using HTML,CSS,PHP,PostGRESQL
 - The Candidate can apply to the job from a list of jobs.
 - The Admin can accept or reject the applicant 
 
-## E-R Diagram :
+## Relational Schema :
 ![E-R Diagram](https://github.com/Joel-Marc/jobportal/blob/master/drawSQL-export-2021-04-18_01_23.png)
