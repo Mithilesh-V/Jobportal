@@ -14,47 +14,56 @@
       margin-top: 20px;
       background: #AFEEEE;
     }
-    .formmith{
-		color: #999;
-    width: 500px;
-		border-radius: 3px;
-    margin-bottom: 15px;
-    background: #AFEEEE;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    padding: 30px;
-    }
-    .new1{
-      width 100pxs ;
-    }
-    h2{
-        color: #999;
-		    margin-bottom: 10px;
-      }
 
-      #customers {
-        font-family: Arial, Helvetica, sans-serif;
-        border-collapse: collapse;
-        width: 90%;
-        margin:auto;
-        
+    .formmith {
+      color: #999;
+      width: 500px;
+      border-radius: 3px;
+      margin-bottom: 15px;
+      background: #AFEEEE;
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+      padding: 30px;
     }
 
-    #customers td, #customers th {
-    border: 1px solid #ddd;
-    padding: 8px;
-    background-color:#ddd;
+    .new1 {
+      width: 100pxs;
     }
 
-    #customers tr:nth-child(even){background-color: #191970;}
+    h2 {
+      color: #999;
+      margin-bottom: 10px;
+    }
 
-    #customers tr:hover {background-color: #ddd;}
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 90%;
+      margin: auto;
+
+    }
+
+    #customers td,
+    #customers th {
+      border: 1px solid #ddd;
+      padding: 8px;
+      background-color: #ddd;
+    }
+
+    #customers tr:nth-child(even) {
+      background-color: #191970;
+    }
+
+    #customers tr:hover {
+      background-color: #ddd;
+    }
 
     #customers th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: rgb(50, 115, 220);;
-    color: white;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: rgb(50, 115, 220);
+      ;
+      color: white;
     }
   </style>
   <script>
@@ -73,9 +82,9 @@
             <h2 class="pull-left">Accept Or Reject Applicants</h2>
           </div>
           <?php
-         error_reporting(E_ALL ^ E_WARNING); 
+          error_reporting(E_ALL ^ E_WARNING);
           if (isset($_POST['submit'])) {
-       
+
             $gen = $_POST['gender'];
             $deg = $_POST['degree'];
             $pexp = $_POST['p_exp'];
@@ -119,7 +128,7 @@
                 }
                 echo "</tbody>";
                 echo "</table>";
-                
+
                 // Free result set
                 unset($result);
               } else {
@@ -132,10 +141,10 @@
             // Close connection
             unset($conn);
           }
-          
-        
-          $hmm=$_SERVER['PHP_SELF'];
-echo <<<_HTML_
+
+
+          $hmm = $_SERVER['PHP_SELF'];
+          echo <<<_HTML_
 <br><a href="admin.php" >GO BACK</a><br>
 <div class="formmith">
   <form method="post" action= "$hmm">
@@ -163,8 +172,8 @@ echo <<<_HTML_
     </form>
 
 _HTML_;
-?>
-</div>
+          ?>
+        </div>
       </div>
     </div>
   </div>
