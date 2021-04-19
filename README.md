@@ -8,4 +8,7 @@ Made using HTML,CSS,PHP,PostGRESQL
 - The Admin can accept or reject the applicant 
 
 ## Relational Schema :
-![E-R Diagram](https://github.com/Joel-Marc/jobportal/blob/master/drawSQL-export-2021-04-18_01_23.png)
+![Rel Schema](https://github.com/Joel-Marc/jobportal/blob/master/drawSQL-export-2021-04-18_01_23.png)
+
+## E-R Diagram :
+![E-R Diagram](https://github.com/Joel-Marc/jobportal/blob/master/image.png)
