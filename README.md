@@ -1,5 +1,7 @@
 # Job Portal
 
+## [LINK TO DEMO VIDEO](https://drive.google.com/file/d/1SmKdBC0cIYsyVE19BxID9bPeUsJhagVV/view?usp=sharing)
+
 Made using HTML,CSS,PHP,PLpgSQL
 
 - It is like a Real-life bulletin board. 
