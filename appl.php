@@ -11,9 +11,53 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
         body {
-            margin-top: 20px;
+            margin-top: 10px;
             background: #AFEEEE;
         }
+        h2{
+        color: #999;
+		margin-bottom: 10px;
+		
+    }
+    #customers {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 90%;
+        margin:auto;
+        
+    }
+
+    #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    background-color:#ddd;
+    }
+
+    #customers tr:nth-child(even){background-color: #191970;}
+
+    #customers tr:hover {background-color: #ddd;}
+
+    #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(50, 115, 220);;
+    color: white;
+    }
+
+        a:link, a:visited {
+     background-color: #00FA9A;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    margin:auto;
+    text-decoration: none;
+    display: inline-block;
+    }
+
+    a:hover, a:active {
+    background-color: #00ff7f;
+    }
 
     </style>
     <script>
@@ -29,7 +73,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="mt-5 mb-3 clearfix">
-                        <h2 class="pull-left">APPLY TO JOB</h2>
+                        <h2 class="pull-left">APPLY FOR JOB</h2>
                     </div>
                     <?php
                     // Include config file
@@ -39,7 +83,7 @@
                     $sql = "SELECT * FROM jobs";
                     if ($result = $conn->query($sql)) {
                         if ($result->rowCount() > 0) {
-                            echo '<table class="table table-bordered table-striped">';
+                            echo '<table id="customers">';
                             echo "<thead>";
                             echo "<tr>";
                             echo "<th>TITLE</th>";
