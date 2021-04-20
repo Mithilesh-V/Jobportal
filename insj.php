@@ -10,7 +10,7 @@ try {
     
     $j_title = $_POST['j_title'];
     $loca = $_POST['loca'];
-    $req = $_POST['req'];
+    $req = $_POST['degree'];
     $sal = $_POST['sal'];
     $txt='';
 
@@ -30,4 +30,3 @@ try {
     open_window('addjobs.php');
   }
   $conn = null;
-?>

@@ -125,3 +125,29 @@ end if;
 return query execute base;
 	
 end;$$
+
+
+
+CREATE OR REPLACE FUNCTION fun1() 
+RETURNS trigger 
+AS $$ 
+declare
+sele empdet.qal%type;
+sela jobs.degree_req%type ;
+BEGIN
+select qal
+from empdet into sele
+where name = NEW.name;
+select degree_req
+from jobs into sela
+where j_id = NEW.j_id;
+if (sele != sela) then raise notice 'Job requires a different Qualification';
+end if;
+RETURN NEW;
+END;
+$$ LANGUAGE 'plpgsql';
+
+-- @block
+
+CREATE TRIGGER RES_TRG before
+INSERT ON appl FOR EACH ROW EXECUTE PROCEDURE fun1();

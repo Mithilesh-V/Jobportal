@@ -14,7 +14,7 @@ try {
     $f_name = $_POST['f_name'];
     $l_name = $_POST['l_name'];
     $phno = $_POST['phno'];
-    $qal = $_POST['qal'];
+    $qal = $_POST['degree'];
     $email = $_POST['email'];
     $skills = $_POST['skills'];
     $age = $_POST['age'];
@@ -44,4 +44,3 @@ try {
     open_window('index.html');
   }
   $conn = null;
-?>
