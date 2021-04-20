@@ -77,6 +77,21 @@
         table tr td:last-child{
             width: 120px;
         }
+        a:link, a:visited {
+     background-color: #00FA9A;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    margin:auto;
+    text-decoration: none;
+    display: inline-block;
+    }
+
+    a:hover, a:active {
+    background-color: #00ff7f;
+    }
+
+
 </style>
 <script>
         $(document).ready(function(){
