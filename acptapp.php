@@ -1,7 +1,7 @@
 <?php
-require_once "config.php";
+use "config.php";
 
-function open_window($url){
+function openWindow($url){
  header("Location: $url");
  exit();
 };
