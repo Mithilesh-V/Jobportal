@@ -13,7 +13,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
         body {
-
             margin-top: 10px;
             background: #AFEEEE;
             font-family: 'Roboto', sans-serif;
@@ -188,7 +187,7 @@
                     </div>
                     <?php
                     // Include config file
-                    require_once "config.php";
+                    use "config.php";
                     // Attempt select query execution
                     $sql = "SELECT * FROM jobs";
                     if ($result = $conn->query($sql)) {
