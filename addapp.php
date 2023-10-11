@@ -1,5 +1,5 @@
 <?php
-require_once "config.php";
+use "config.php";
 
 try {
     
@@ -24,4 +24,3 @@ try {
     header("Location: appl.php?name=$name");
   }
   $conn = null;
-?>
