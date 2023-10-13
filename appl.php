@@ -10,8 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
-        body {
-            margin-top: 10px;
+        body{
+	    margin-top: 10px;
             background: #AFEEEE;
         }
         h2{
@@ -77,7 +77,7 @@
                     </div>
                     <?php
                     // Include config file
-                    require_once "config.php";
+                    use "config.php";
                     $name = $_GET['name'];
                     // Attempt select query execution
                     $sql = "SELECT * FROM jobs";
@@ -101,7 +101,8 @@
                                 echo "<td>" . $row['degree_req'] . "</td>";
                                 echo "<td>" . $row['salary'] . "</td>";
                                 echo "<td>";
-                                echo '<a href="addapp.php?name=' . $name . '&j_id=' . $row['j_id'] . '" class="mr-3" title="Apply" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                                echo '<a href="addapp.php?name=' . $name . '&j_id=' . $row['j_id'] . 
+					'" class="mr-3" title="Apply" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
                                 echo "</td>";
 
                                 echo "</tr>";
