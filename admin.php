@@ -17,7 +17,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <style>
     body{
-        margin-top:20px;
+	margin-top:20px;
         font-style:'Varela Round';
         background:#AFEEEE;
         font-size: large;
@@ -122,7 +122,7 @@ a:hover, a:active {
     </style>
     <script>
         $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();   
+            $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
 </head>
@@ -134,7 +134,7 @@ ADMINISTRATOR
     <br><br><br>
     <?php
     // Include config file
-    require_once "config.php";
+    use "config.php";
 
     // Attempt select query execution
     $sql = "SELECT * FROM suma()";
@@ -156,8 +156,8 @@ ADMINISTRATOR
                     echo "<td>" . $row['rjct'] . "</td>";
                 echo "</tr>";
             }
-            echo "</tbody>";                            
-        echo "</table>";
+            echo "</tbody>";
+	    echo "</table>";
         // Free result set
         unset($result);
     } else{
