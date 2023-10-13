@@ -1,11 +1,10 @@
 <?php
-require_once "config.php";
+use "config.php";
 
-function open_window($url){
+function openwindow($url){
  header("Location: $url");
  exit();
 };
-
 try {
     
     $name = $_GET['name'];
@@ -25,7 +24,7 @@ try {
   }
   if(strcmp($txt,"New record created successfully") == 0)
   {
-    open_window('anr.php');
+    openwindow('anr.php');
   }
   $conn = null;
 ?>
