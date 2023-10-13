@@ -95,8 +95,8 @@
 </style>
 <script>
         $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();   
-        });
+            $('[data-toggle="tooltip"]').tooltip();
+	});
 </script>
 </head>
 <body>
@@ -105,7 +105,7 @@ APPLICANT
 </div>
     <?php
     // Include config file
-    require_once "config.php";
+    use "config.php";
     $name=$_GET['name'];
     // Attempt select query execution
     $sql = "SELECT * FROM sume('$name')";
@@ -127,7 +127,7 @@ APPLICANT
                     echo "<td>" . $row['stat'] . "</td>";
                 echo "</tr>";
             }
-            echo "</tbody>";                            
+            echo "</tbody>";
         echo "</table>";
         // Free result set
         unset($result);
@@ -157,3 +157,4 @@ unset($conn);
 ?>
 </body>
 </html>
+ 
