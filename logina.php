@@ -1,11 +1,10 @@
 <?php
-require_once "config.php";
+use "config.php";
 
-function open_window($url){
+function openwindow($url){
  header("Location: $url");
  exit();
 };
-
 try {
     
     $name = $_POST['username'];
@@ -23,11 +22,11 @@ try {
   }
   if( $cnt < 1)
   {
-    open_window('index.html');
+    openwindow('index.html');
   }
   else
   {
-      open_window('admin.php');
+      openwindow('admin.php');
   }
   $conn = null;
-?>
+
