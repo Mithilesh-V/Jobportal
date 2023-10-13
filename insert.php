@@ -1,11 +1,10 @@
 <?php
-require_once "config.php";
+use "config.php";
 
-function open_window($url){
+function openwindow($url){
  header("Location: $url");
  exit();
 };
-
 try {
     
     $name = $_POST['username'];
@@ -25,7 +24,8 @@ try {
     {
       $conn->beginTransaction();
       $conn->exec("INSERT INTO loge VALUES ('$name','$password')");
-      $conn->exec("INSERT INTO empdet(f_name,l_name,phno,email,qal,skills,age,gender,p_exp,name) VALUES ('$f_name','$l_name','$phno','$email','$qal','$skills','$age','$gender','$p_exp','$name')");
+      $conn->exec("INSERT INTO empdet(f_name,l_name,phno,email,qal,skills,age,gender,p_exp,name) 
+      VALUES ('$f_name','$l_name','$phno','$email','$qal','$skills','$age','$gender','$p_exp','$name')");
       $conn->commit();
       $txt = "New record created successfully";
     }
@@ -41,6 +41,6 @@ try {
   }
   if(strcmp($txt,"New record created successfully") == 0)
   {
-    open_window('index.html');
+    openwindow('index.html');
   }
   $conn = null;
