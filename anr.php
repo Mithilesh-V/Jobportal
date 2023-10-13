@@ -26,7 +26,7 @@
     }
 
     .new1 {
-      width: 100pxs;
+      width: 100px;
     }
 
     h2 {
@@ -90,7 +90,7 @@
             $pexp = $_POST['p_exp'];
 
             // Include config file
-            require_once "config.php";
+            use "config.php";
 
             // Attempt select query execution
             $sql = "SELECT * FROM showanr('$gen','$deg',$pexp)";
@@ -120,8 +120,10 @@
                   echo "<td>" . $row['t6'] . "</td>";
                   echo "<td>" . $row['t7'] . "</td>";
                   echo '<td>';
-                  echo '<a href="acptapp.php?name=' . $row['t8'] . '&j_id=' . $row['t9'] . '" class="mr-3" title="ACCEPT" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
-                  echo '<a href="rmapp.php?name=' . $row['t8'] . '&j_id=' . $row['t9'] . '" title="REJECT" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
+                  echo '<a href="acptapp.php?name=' . $row['t8'] . '&j_id=' . $row['t9'] . 
+                    '" class="mr-3" title="ACCEPT" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                  echo '<a href="rmapp.php?name=' . $row['t8'] . '&j_id=' . $row['t9'] . 
+                    '" title="REJECT" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
                   echo "</td>";
 
                   echo "</tr>";
@@ -173,6 +175,7 @@
 
 _HTML_;
           ?>
+
         </div>
       </div>
     </div>
