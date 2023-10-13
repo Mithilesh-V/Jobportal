@@ -1,11 +1,10 @@
 <?php
-require_once "config.php";
+use "config.php";
 
-function open_window($url){
+function openwindow($url){
  header("Location: $url");
  exit();
 };
-
 try {
     
     $j_title = $_POST['j_title'];
